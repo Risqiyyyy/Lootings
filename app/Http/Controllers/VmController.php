@@ -105,8 +105,10 @@ class VmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Vm $vm)
     {
-        //
+        $vm->delete();
+        return redirect()->route('vm.index')
+                 ->with('success','User deleted successfully');
     }
 }

@@ -73,6 +73,7 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        Alert::success('Berhasil', 'Data Berhasil Ditambahkan');
         return redirect()->route('users.index',compact('user'));
     }
 }

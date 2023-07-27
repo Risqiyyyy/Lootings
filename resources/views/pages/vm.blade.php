@@ -150,6 +150,14 @@
                                     <td>{{ $v->vm_os }}</td>
                                     <td>{{ $v->vm_kernel }}</td>
                                     <td>{{ $v->note }}</td>
+                                    <td> 
+                                        <form action="{{ route('vm.destroy',$v->vm_id) }}" method="POST">
+                                        <a class="btn btn-primary" href="{{ route('vm.edit',$v->vm_id) }}">Edit</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                      </form>
+                                </td>
                                 </tr>
                                 @endforeach
                             </tbody>
