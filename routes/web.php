@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VmController;
+use App\Http\Controllers\NgrokTunnelController;
+use App\Http\Controllers\ProviderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/assets', [App\Http\Controllers\AssetsController::class, 'index'])->name('assets');
 Route::resource('users', UsersController::class);
 Route::resource('vm', VmController::class);
+Route::resource('Provider', ProviderController::class);
+Route::resource('Ngroktunnel', NgrokTunnelController::class);
+Route::resource('CTunnel', NgrokTunnelController::class);
+
