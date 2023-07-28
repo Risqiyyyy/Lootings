@@ -72,35 +72,143 @@
                         {{-- end modal tambah user --}}
 
                         <table id="data-table-combine" class="table table-striped table-bordered align-middle">
-                            <thead>
-                                <tr>
-                                    <th width="1%">No</th>
-                                    <th class="text-nowrap">Name</th>
-                                    <th class="text-nowrap">Email</th>
-                                    <th class="text-nowrap">Created</th>
-                                    <th class="text-nowrap">Updated</th>
-                                    <th class="text-nowrap">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($users as $user)
-                                <tr class="odd gradeX">
-                                    <td width="1%" class="fw-bold text-dark">{{ ++$i }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>{{ $user->updated_at }}</td>
-                                    <td> <form action="{{ route('users.destroy',$user->id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" data-confirm-delete="true">Delete</button>
-                                    </form></td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        {!! $users->links() !!}
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th> Permission Name </th>
+						<th> Rules </th>
+						<th> Description</th>
+						<th> Read </th>
+						<th> Write </th>
+						<th> Update </th>
+						<th> Delete </th>
+						<th> Date Created </th>
+						<th> Date Modified </th>
+					</tr>
+				</thead>
+				<tbody>
+
+
+
+
+
+					<tr class="table-active">
+						<td>
+							1
+						</td>
+						<td> Full Control </td>
+						<td> main.permission.fctrl</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>01/01/2001</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="">
+						<td>
+							1
+						</td>
+						<td> Read &amp; Execute </td>
+						<td> main.permission.rxe</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>13/07/2003</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="table-active">
+						<td>
+							1
+						</td>
+						<td> List Folder Contents </td>
+						<td> main.permission.lstfldr</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>12/05/2013</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="">
+						<td>
+							1
+						</td>
+						<td> Read </td>
+						<td> main.permission.read</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>10/01/2013</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="table-active">
+						<td>
+							1
+						</td>
+						<td> Modify </td>
+						<td> main.permission.modify </td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>13/01/2021</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="">
+						<td>
+							1
+						</td>
+						<td> Write </td>
+						<td> main.permission.write</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>01/01/2013</td>
+						<td>13/07/2023</td>
+					</tr>
+					<tr class="table-active">
+						<td>
+							1
+						</td>
+						<td> Special Permission </td>
+						<td> main.permission.spclprmsn</td>
+						<td>
+							Call in to confirm
+						</td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td><input type="checkbox"> </td>
+						<td>05/05/2000</td>
+						<td>13/07/2023</td>
+					</tr>
+				</tbody>
+			</table>
+
                     </div>
                     <!-- END panel-body -->
 

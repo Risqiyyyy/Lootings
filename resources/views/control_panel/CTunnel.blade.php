@@ -7,16 +7,18 @@
 	<div id="app" class="app app-header-fixed app-sidebar-fixed ">
         @include('layouts.navbar')
         @include('layouts.sidebar')
+
+
 		<!-- BEGIN #content -->
 		<div id="content" class="app-content">
 			<!-- BEGIN breadcrumb -->
 			<ol class="breadcrumb float-xl-end">
 				<li class="breadcrumb-item"><a href="javascript:;">Control Panel</a></li>
-				<li class="breadcrumb-item active">Users</li>
+				<li class="breadcrumb-item active">Cloudflare Tunnel</li>
 			</ol>
 			<!-- END breadcrumb -->
 			<!-- BEGIN page-header -->
-			<h1 class="page-header">Users</h1>
+			<h1 class="page-header">Cloudflare Tunnel</h1>
 			<!-- END page-header -->
 
             <div class="col-xl">
@@ -24,7 +26,7 @@
                 <div class="panel panel-inverse">
                     <!-- BEGIN panel-heading -->
                     <div class="panel-heading">
-                        <h4 class="panel-title">Data Users</h4>
+                        <h4 class="panel-title">Data Tunnel Cloudflare</h4>
                         <div class="panel-heading-btn">
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -41,7 +43,7 @@
                         {{-- modal tambah user --}}
                         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Tambah Data</button>
                         <div class="modal fade m-3" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Data Tunnel Cloudflare</h5>
@@ -163,6 +165,9 @@ fa-md"></i> Aditional Column</div>
                                     <th class="text-nowrap">Tunnel Name</th>
                                     <th class="text-nowrap">Tunnel Host</th>
                                     <th class="text-nowrap">Tunnel Type</th>
+                                    <th class="text-nowrap">Username</th>
+                                    <th class="text-nowrap">Password</th>
+                                    <th class="text-nowrap">Login Key</th>
                                     <th class="text-nowrap">Action</th>
                                 </tr>
                             </thead>
@@ -170,6 +175,9 @@ fa-md"></i> Aditional Column</div>
 
                                 <tr class="odd gradeX">
                                     <td width="1%" class="fw-bold text-dark"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -202,6 +210,7 @@ fa-md"></i> Aditional Column</div>
 	</div>
 
 </div>
+
 <script>
 var myModal = document.getElementById('myModal')
 var myInput = document.getElementById('myInput')
@@ -209,5 +218,11 @@ var myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', function () {
   myInput.focus()
 })
+
+
 </script>
+
+
+
 @endsection
+
