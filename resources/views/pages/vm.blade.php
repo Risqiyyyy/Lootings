@@ -22,6 +22,7 @@
 
             {{-- modal --}}
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Tambah Data</button>
+            
             <div class="modal fade m-3" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -35,40 +36,40 @@
                         <div class="row g-2 mb-3">
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM NAME</label>
-                                <input type="text" name="vm_name" class="form-control" placeholder="...">
+                                <input type="text" name="vm_name" class="form-control" placeholder="..." >
                             </div>
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM ETHERNET</label>
-                                <input type="text" name="vm_ethernet" class="form-control" placeholder="...">
+                                <input type="text" name="vm_ethernet" class="form-control" placeholder="..." >
                             </div>
                         </div>
                         
                         <div class="row g-2 mb-3">
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM IP</label>
-                                <input type="text" name="vm_ip" class="form-control" placeholder="...">
+                                <input type="text" name="vm_ip" class="form-control" placeholder="..." >
                             </div>
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM GATEWAY</label>
-                                <input type="text" name="vm_gateway" class="form-control" placeholder="...">
+                                <input type="text" name="vm_gateway" class="form-control" placeholder="..." >
                             </div>
                         </div>
 
                         <div class="row g-2 mb-3">
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM NAMESERVER</label>
-                                <input type="text" name="vm_name_server" class="form-control" placeholder="...">
+                                <input type="text" name="vm_name_server" class="form-control" placeholder="..." >
                             </div>
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM VLAN</label>
-                                <input type="text" name="vm_vlan" class="form-control" placeholder="...">
+                                <input type="text" name="vm_vlan" class="form-control" placeholder="..." >
                             </div>
                         </div>
 
                         <div class="row g-2 mb-3">
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM HOST</label>
-                                <input type="text" name="vm_host" class="form-control" placeholder="...">
+                                <input type="text" name="vm_host" class="form-control" placeholder="..." >
                             </div>
                             <div class="col-md">
                                 <label for="floatingInputGrid">VM HOSTNAME</label>
@@ -86,9 +87,26 @@
                                 <input type="text" name="vm_kernel" class="form-control" placeholder="...">
                             </div>
                         </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-md">
+                                <select class="form-select">
+                                    <option selected disabled hidden>Tunel</option>
+                                    @foreach ($tunel_provider as $t)
+                                    <option value="{{ $t->tpr_id }}">{{ $t->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         
                         <label class="form-label">NOTE</label>
-                        <input class="form-control" name="note" placeholder="...">
+                        <input class="form-control mb-3" name="note" placeholder="...">
+
+                        
+                        @if ($t->tpr_id == "1")
+                            <label class="form-label">NOTE</label>
+                            <input class="form-control mb-3" name="note" placeholder="...">
+                        @endif
 
                     </div>
                     <div class="modal-footer">
@@ -106,7 +124,7 @@
                 <div class="panel panel-inverse">
                     <!-- BEGIN panel-heading -->
                     <div class="panel-heading">
-                        <h4 class="panel-title">DataTable - Fixed Header</h4>
+                        <h4 class="panel-title">Data VM</h4>
                         <div class="panel-heading-btn">
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -152,7 +170,7 @@
                                     <td>{{ $v->note }}</td>
                                     <td> 
                                         <form action="{{ route('vm.destroy',$v->vm_id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('vm.edit',$v->vm_id) }}">Edit</a>
+                                        {{-- <a class="btn btn-primary" href="{{ route('vm.edit',$v->vm_id) }}">Edit</a> --}}
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

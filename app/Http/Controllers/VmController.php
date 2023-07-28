@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vm;
+use App\Models\TunelProvider;
 Use Alert;
 
 class VmController extends Controller
@@ -22,8 +23,9 @@ class VmController extends Controller
      */
     public function index()
     {
+        $tunel_provider = TunelProvider::all();
         $vm = Vm::latest()->paginate(5);
-        return view('pages/vm',compact('vm'))
+        return view('pages/vm',compact('vm','tunel_provider'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
