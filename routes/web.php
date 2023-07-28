@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VmController;
 use App\Http\Controllers\NgrokTunnelController;
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\CloudflareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,5 @@ Route::resource('users', UsersController::class);
 Route::resource('vm', VmController::class);
 Route::resource('Provider', ProviderController::class);
 Route::resource('Ngroktunnel', NgrokTunnelController::class);
-Route::resource('CTunnel', NgrokTunnelController::class);
+Route::resource('CTunnel', CloudflareController::class);
 
