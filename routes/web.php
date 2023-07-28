@@ -6,6 +6,8 @@ use App\Http\Controllers\VmController;
 use App\Http\Controllers\NgrokTunnelController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\CloudflareController;
+use App\Http\Controllers\DataPermissionController;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +42,6 @@ Route::resource('vm', VmController::class);
 Route::resource('Provider', ProviderController::class);
 Route::resource('Ngroktunnel', NgrokTunnelController::class);
 Route::resource('Cloudflare', CloudflareController::class);
+Route::resource('DataPermission', DataPermissionController::class);
+Route::resource('Roles', RolesController::class);
 

@@ -47,13 +47,13 @@
 							</div>
                             <div class="menu-text">Users</div>
                         </a>
-                        <a href="{{ route('users.index') }}" class="menu-link">
+                        <a href="{{ route('DataPermission.index') }}" class="menu-link">
                         <div class="menu-icon-img">
 								<img src="img/logo/logo-bs5.png" alt="" />
 							</div>
                             <div class="menu-text">Data Permisions</div>
                         </a>
-						<a href="" class="menu-link">
+						<a href="{{ route('Roles.index') }}" class="menu-link">
                         <div class="menu-icon-img">
 								<img src="img/logo/logo-bs5.png" alt="" />
 							</div>
