@@ -7,7 +7,7 @@
 					<div class="menu-profile">
 							<div class="menu-profile-cover with-shadow"></div>
 							<div class="menu-profile-image">
-								<img src="../assets/img/user/user-13.jpg" alt="" />
+								<img src="img/user/user-13.jpg" alt="" />
 							</div>
 							<div class="menu-profile-info">
 								<div class="d-flex align-items-center">
@@ -21,27 +21,76 @@
 					<div class="menu-header">Pages</div>
                     <div class="menu-item">
                         <a href="{{ route('home') }}" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">Dashboard</div>
                         </a>
                         <a href="{{ route('assets') }}" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">Assets</div>
                         </a>
 						<a href="{{ route('vm.index') }}" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">VM</div>
                         </a>
                     </div>
                     <div class="menu-header">Control Panel</div>
 					<div class="menu-item">
                         <a href="{{ route('users.index') }}" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">Users</div>
                         </a>
                         <a href="{{ route('users.index') }}" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">Data Permisions</div>
                         </a>
 						<a href="" class="menu-link">
+                        <div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
                             <div class="menu-text">Roles</div>
                         </a>
                     </div>
+
+
+
+
+					<div class="menu-header">Add Data Form</div>
+
+                    <div class="menu-item ">
+						<a href="{{ route('CTunnel.index') }}" class="menu-link">
+							<div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
+							<div class="menu-text">Cloudflare Tunnel</div>
+						</a>
+					</div>
+                    <div class="menu-item ">
+						<a href="{{ route('Ngroktunnel.index') }}" class="menu-link">
+							<div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
+							<div class="menu-text">Ngrok Tunnel</div>
+						</a>
+					</div>
+					<div class="menu-item ">
+						<a href="{{ route('Provider.index') }}" class="menu-link">
+							<div class="menu-icon-img">
+								<img src="img/logo/logo-bs5.png" alt="" />
+							</div>
+							<div class="menu-text">Provider</div>
+						</a>
+					</div>
+					</div>
 				</div>
 				<!-- END menu -->
 			</div>
