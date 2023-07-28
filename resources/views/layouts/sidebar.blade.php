@@ -67,7 +67,7 @@
 					<div class="menu-header">Add Data Form</div>
 
                     <div class="menu-item ">
-						<a href="{{ route('CTunnel.index') }}" class="menu-link">
+						<a href="{{ route('Cloudflare.index') }}" class="menu-link">
 							<div class="menu-icon-img">
 								<img src="img/logo/logo-bs5.png" alt="" />
 							</div>

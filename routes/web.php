@@ -41,7 +41,7 @@ Route::resource('users', UsersController::class);
 Route::resource('vm', VmController::class);
 Route::resource('Provider', ProviderController::class);
 Route::resource('Ngroktunnel', NgrokTunnelController::class);
-Route::resource('CTunnel', CloudflareController::class);
+Route::resource('Cloudflare', CloudflareController::class);
 Route::resource('DataPermission', DataPermissionController::class);
 Route::resource('Roles', RolesController::class);
 

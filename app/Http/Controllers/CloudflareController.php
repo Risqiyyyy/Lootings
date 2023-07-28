@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cloudflare;
+use App\Models\CloudflareDomain;
+use DB;
+Use Alert;
+
 
 class CloudflareController extends Controller
 {
@@ -13,8 +18,11 @@ class CloudflareController extends Controller
      */
     public function index()
     {
-        //
-        return view('control_panel/CTunnel');
+        $cloud = DB::table('tunel_cloudflared')
+            // ->join('cloudflare_domain', 'tunel_cloudflared.domain_id', '=', 'cloudflare_domain.domain_id')
+            // ->select('cloudflare_domain.*', 'cloudflare_domain.*')
+            ->get();
+        return view('control_panel/Cloudflare',compact('cloud'));
     }
 
     /**
@@ -24,7 +32,7 @@ class CloudflareController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->route('Cloudflare.index',compact('cloud'));
     }
 
     /**
@@ -35,7 +43,18 @@ class CloudflareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $domain = CloudflareDomain::create($request->all());
+        $cloud = Cloudflare::create([
+        'domain_id' => $domain->domain_id,
+        'tunel_name' => $request->tunel_name,
+        'tunel_host' => $request->tunel_host,
+        'tunel_type' => $request->tunel_type,
+        'tunel_login_users' => $request->tunel_login_users,
+        'tunel_login_password' => $request->tunel_login_password,
+        'tunel_login_key' => $request->tunel_login_key
+        ]);
+        Alert::success('Berhasil', 'Data Berhasil Ditambahkan');
+        return redirect()->route('Cloudflare.index');
     }
 
     /**
