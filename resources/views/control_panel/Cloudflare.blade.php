@@ -191,6 +191,9 @@
                                 <th class="text-nowrap">Tunnel Name</th>
                                 <th class="text-nowrap">Tunnel Host</th>
                                 <th class="text-nowrap">Tunnel Type</th>
+                                <th class="text-nowrap">Username</th>
+                                    <th class="text-nowrap">Password</th>
+                                    <th class="text-nowrap">Login Key</th>
                                 <th class="text-nowrap">Action</th>
                             </tr>
                         </thead>
@@ -202,6 +205,9 @@
                                 <td>{{ $c->tunel_name }}</td>
                                 <td>{{ $c->tunel_host }}</td>
                                 <td>{{ $c->tunel_type }}</td>
+                                <td>{{ $c->tunel_login_users }}</td>
+                                <td>{{ $c->tunel_login_password }}</td>
+                                <td>{{ $c->tunel_login_key }}</td>
                                 <td>
                                     <form action="" method="POST">
                                         <a class="btn btn-primary" href="">Edit</a>
